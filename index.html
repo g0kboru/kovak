@@ -5,91 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KOVAK</title>
   <style>
-    /* Varsayılan açık tema */
+    /* Genel stil */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: white;
       color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
+
     header {
-      background-color: #691414;
+      background-color: #7cc5c3; /* Bebek mavisi tonları */
       color: white;
       padding: 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
     }
-    
+
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between; /* Sola ve sağa hizalama */
+      transition: transform 0.3s ease;
+    }
+
     nav a {
-      color: rgb(255, 255, 255);
+      color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
-    
+
+    nav a:hover {
+      color: #ff6f61; /* Hover rengi */
+      transform: scale(1.1);
+    }
+
+    .navbar-title {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      animation: titleAnimation 1s ease-in-out;
+    }
+
     .logo {
-      height: 60px;
+      display: none;
     }
-    
+
     section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      transition: padding 0.3s ease;
     }
-    
+
     h2 {
-      border-bottom: 2px solid #691414;
+      border-bottom: 2px solid #7cc5c3; /* Bebek mavisi */
       padding-bottom: 10px;
       margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
     }
-    
+
     .gallery img {
       width: 100%;
       max-width: 300px;
       margin: 10px;
       border-radius: 10px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
     }
-    
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 15px;
     }
-    
+
     footer {
       background-color: #222;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    
+
     .faq-item {
       margin-bottom: 20px;
     }
-    
+
     .faq-item h4 {
       margin: 10px 0 5px;
     }
-    
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
     }
-    
+
     th, td {
       padding: 10px;
-      border: 1px solid #691414;
+      border: 1px solid #7cc5c3;
       text-align: left;
     }
-    
+
     th {
-      background-color: #691414;
+      background-color: #7cc5c3;
       color: white;
     }
-    
+
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -100,57 +132,61 @@
       text-decoration: none;
       border-radius: 5px;
       margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    
+
     .button:hover {
-      background-color: #d32f2f;
-    }
-    
-    /* Karanlık tema */
-    body.dark-mode {
-      background-color: #000000;
-      color: white;
-    }
-    
-    body.dark-mode header {
-      background-color: #691414;
-    }
-    
-    body.dark-mode .button {
-      background-color: #e63946;
+      background-color: #ff6f61;
+      transform: scale(1.1);
     }
 
-    body.dark-mode .button:hover {
-      background-color: #d32f2f;
+    /* Animasyonlar */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
-    /* Tema geçiş düğmesi */
-    .theme-toggle {
-      background-color: #691414;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .theme-toggle:hover {
-      background-color: #e63946;
+    @keyframes titleAnimation {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="KOVAK.jpg" alt="KOVAK Logo" class="logo">
     <nav>
-      <a href="#anasayfa">Ana Sayfa</a>
-      <a href="#teknik">Teknik Özellikler</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#iletisim">İletişim</a>
-      <a href="#sss">SSS</a>
+      <div>
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#teknik">Teknik Özellikler</a>
+      </div>
+      <div class="navbar-title">KOVAK</div>
+      <div>
+        <a href="#galeri">Galeri</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="#sss">SSS</a>
+      </div>
     </nav>
-    <button class="theme-toggle" onclick="toggleTheme()">Tema Değiştir</button>
   </header>
 
   <section id="anasayfa">
@@ -186,37 +222,37 @@
   </section>
 
   <section id="iletisim">
-    <h2>İletişim / Takım</h2>
-    <p><strong>KOVAK Takımı</strong></p>
-    <p>E-posta: gokborukovak@gmail.com</p>
-    <p>Instagram: @gokborukovak</p>
-    <p>GitHub: github.com/gokborukovak</p>
+    <h2>İletişim</h2>
+    <p>Bize ulaşmak için aşağıdaki iletişim bilgilerimizi kullanabilirsiniz:</p>
+    <p>Email: <a href="gokborukovak@gmail.com">gokborukovak@gmail.com</a></p>
+    <p>Telefon: +90 538 714 9405</p>
   </section>
 
   <section id="sss">
     <h2>Sıkça Sorulan Sorular (SSS)</h2>
     <div class="faq-item">
-      <h4>KOVAK hangi görevlerde kullanılabilir?</h4>
-      <p>Kamikaze görevi, hedef takibi, uçuşa yasaklı alanlardan kaçış gibi birçok senaryo için özelleştirilmiştir.</p>
+      <h4>1. KOVAK ne tür bir araçtır?</h4>
+      <p>KOVAK, sabit kanatlı bir SİHA’dır ve otonom uçuş yapabilen yüksek manevra kabiliyetine sahip bir insansız hava aracıdır.</p>
     </div>
     <div class="faq-item">
-      <h4>Uçuş süresi ne kadar?</h4>
-      <p>Tam şarjlı batarya ile yaklaşık 20 dakika etkili görev süresi vardır.</p>
+      <h4>2. KOVAK’ın uçuş süresi ne kadar?</h4>
+      <p>KOVAK, tam şarj ile 20 dakika uçuş süresi sunmaktadır.</p>
     </div>
     <div class="faq-item">
-      <h4>Hedef tespiti nasıl yapılmaktadır?</h4>
-      <p>YOLOv5 algoritması ve özel eğitilmiş CNN ile görüntü işleme yapılarak yüksek doğrulukla hedef tespiti sağlanır.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Kontrol sistemi nedir?</h4>
-      <p>Pixhawk Cube Orange+ otopilot, yer istasyonunda QGroundControl ve özel arayüz ile kontrol edilir.</p>
+      <h4>3. KOVAK’ın görüntü işleme sistemi nedir?</h4>
+      <p>KOVAK, OpenCV ve YOLOv5 gibi gelişmiş görüntü işleme teknolojilerini kullanarak hedef tespiti yapar ve görüntü aktarımı sağlar.</p>
     </div>
   </section>
 
   <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-    }
+    // Sayfa yüklenince resimlerin animasyonu başlatılır
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.gallery img');
+      images.forEach((img, index) => {
+        img.style.animationDelay = `${index * 0.2}s`;
+        img.style.opacity = 1; // Görsellerin yüklenmesini sağla
+      });
+    });
   </script>
 </body>
 </html>
