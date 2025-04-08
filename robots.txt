@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://g0kboru.github.io/kovak/sitemap.xml
