@@ -43,10 +43,28 @@
       margin-top: 10px;
       font-weight: bold;
     }
+
+    /* Geri Dön Butonu */
+    .back-button {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #27217e;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #3a34b4;
+    }
   </style>
 </head>
 <body>
   <h1>KOVAK Takımı</h1>
+
   <div class="team-container">
     <!-- Erkekler -->
     <div class="member">
@@ -88,5 +106,9 @@
       <div class="member-name">Beren</div>
     </div>
   </div>
+  <!-- Geri Dön Butonu -->
+  <button onclick="window.history.back()" class="back-button">
+    ◀ Geri Dön
+  </button>
 </body>
 </html>
