@@ -1,101 +1,84 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <title>KOVAK | Otonom Sabit Kanatlı SİHA</title>
-    <meta name="description" content="KOVAK Projesi, özgün tasarımıyla geliştirilen sabit kanatlı, yüksek manevra kabiliyetine sahip otonom bir SİHA sistemidir. Teknik özellikleri ve görev kabiliyetleriyle öne çıkar." />
-    <meta name="keywords" content="KOVAK, SİHA, İHA, sabit kanatlı, otonom hava aracı, drone, teknik özellikler, savunma teknolojisi" />
-    <meta name="author" content="KOVAK Takımı" />
-  
-    <!-- Sosyal Medya Paylaşımı için Open Graph -->
-    <meta property="og:title" content="KOVAK | Sabit Kanatlı Otonom SİHA" />
-    <meta property="og:description" content="KOVAK, özgün tasarımı ve yüksek performansıyla geliştirilen sabit kanatlı otonom SİHA projesidir." />
-    <meta property="og:image" content="https://g0kboru.github.io/kovak/KOVAK.jpg" />
-    <meta property="og:url" content="https://g0kboru.github.io/kovak/" />
-    <meta property="og:type" content="website" />
-  
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://g0kboru.github.io/kovak/KOVAK.jpg" />
-  
-    <!-- Sitemap (ekstra) -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://g0kboru.github.io/kovak/sitemap.xml" />  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOVAK</title>
+  <meta name="description" content="KOVAK Projesi, özgün tasarımıyla geliştirilen sabit kanatlı, yüksek manevra kabiliyetine sahip otonom bir SİHA sistemidir. Teknik özellikleri ve görev kabiliyetleriyle öne çıkar." />
+  <meta name="keywords" content="KOVAK, SİHA, İHA, sabit kanatlı, otonom hava aracı, drone, teknik özellikler, savunma teknolojisi" />
+  <meta name="author" content="KOVAK Takımı" />
+  <meta property="og:title" content="KOVAK | Sabit Kanatlı Otonom SİHA" />
+  <meta property="og:description" content="KOVAK, özgün tasarımı ve yüksek performansıyla geliştirilen sabit kanatlı otonom SİHA projesidir." />
+  <meta property="og:image" content="https://g0kboru.github.io/kovak/KOVAK.jpg" />
+  <meta property="og:url" content="https://g0kboru.github.io/kovak/" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="https://g0kboru.github.io/kovak/KOVAK.jpg" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://g0kboru.github.io/kovak/sitemap.xml" />
+
   <style>
-    /* Genel stil */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: white;
-      color: #000000;
+      color: #000;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
-      background-color: #7cc5c3; /* Bebek mavisi tonları */
-      color: rgb(255, 255, 255);
-      padding: 20px;
+      background-color: #7cc5c3;
+      color: white;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background-color 0.3s ease;
+      flex-wrap: wrap;
     }
 
     nav {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      justify-content: space-between; /* Sola ve sağa hizalama */
-      transition: transform 0.3s ease;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
-      display: inline-block;
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
     nav a:hover {
-      color: #27217e; /* Hover rengi */
+      color: #27217e;
       transform: scale(1.1);
     }
 
     .navbar-title {
-      flex-grow: 1;
       text-align: center;
       font-size: 24px;
       font-weight: bold;
+      flex: 1;
       animation: titleAnimation 1s ease-in-out;
-    }
-
-    .logo {
-      display: none;
     }
 
     section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
-      transition: padding 0.3s ease;
     }
 
     h2 {
-      border-bottom: 2px solid #7cc5c3; /* Bebek mavisi */
+      border-bottom: 2px solid #7cc5c3;
       padding-bottom: 10px;
       margin-bottom: 20px;
       animation: fadeIn 1s ease-in-out;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-      opacity: 0;
-      animation: fadeInUp 1.5s ease forwards;
     }
 
     .gallery {
@@ -105,19 +88,19 @@
       gap: 15px;
     }
 
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
     footer {
       background-color: #222;
       color: white;
       padding: 20px;
       text-align: center;
-    }
-
-    .faq-item {
-      margin-bottom: 20px;
-    }
-
-    .faq-item h4 {
-      margin: 10px 0 5px;
     }
 
     table {
@@ -157,35 +140,58 @@
       transform: scale(1.1);
     }
 
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item h4 {
+      margin: 10px 0 5px;
+    }
+
     /* Animasyonlar */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes titleAnimation {
-      0% {
-        transform: translateY(-30px);
-        opacity: 0;
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Mobil Uyumluluk */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
       }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .navbar-title {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      section {
+        padding: 20px 15px;
+      }
+
+      table, th, td {
+        font-size: 14px;
+      }
+
+      .gallery img {
+        max-width: 90%;
       }
     }
   </style>
@@ -193,15 +199,18 @@
 <body>
   <header>
     <nav>
-      <div>
+      <div class="nav-links">
         <a href="#anasayfa">Ana Sayfa</a>
         <a href="#teknik">Teknik Özellikler</a>
+        <a href="ekibimiz.html" target="_blank">Ekibimiz</a>
       </div>
       <div class="navbar-title">KOVAK</div>
-      <div>
+      <div class="nav-links">
         <a href="#galeri">Galeri</a>
         <a href="#iletisim">İletişim</a>
         <a href="#sss">SSS</a>
+        <a href="https://seyhisaanadolulisesi.meb.k12.tr/" target="_blank">Okulumuz</a>
+        
       </div>
     </nav>
   </header>
@@ -241,7 +250,7 @@
   <section id="iletisim">
     <h2>İletişim</h2>
     <p>Bize ulaşmak için aşağıdaki iletişim bilgilerimizi kullanabilirsiniz:</p>
-    <p>Email: <a href="https://mail.google.com/">gokborukovak@gmail.com</a></p>
+    <p>Email: <a href="mailto:gokborukovak@gmail.com">gokborukovak@gmail.com</a></p>
     <p>İnstagram: <a href="https://www.instagram.com/gokborukovak/">gokborukovak</a></p>
     <p>Telefon: +90 538 714 9405</p>
     <p>Adres: Şeyh İsa Anadolu Lisesi, Manisa/Akhisar</p>
@@ -264,12 +273,11 @@
   </section>
 
   <script>
-    // Sayfa yüklenince resimlerin animasyonu başlatılır
     document.addEventListener('DOMContentLoaded', () => {
       const images = document.querySelectorAll('.gallery img');
       images.forEach((img, index) => {
         img.style.animationDelay = `${index * 0.2}s`;
-        img.style.opacity = 1; // Görsellerin yüklenmesini sağla
+        img.style.opacity = 1;
       });
     });
   </script>
