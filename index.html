@@ -40,6 +40,11 @@
       align-items: center;
       width: 100%;
       flex-wrap: wrap;
+      nav {
+  flex-direction: column;
+  align-items: center;
+}
+
     }
 
     .nav-links {
@@ -277,7 +282,11 @@
       <h4>3. KOVAK’ın görüntü işleme sistemi nedir?</h4>
       <p>KOVAK, OpenCV ve YOLOv5 gibi gelişmiş görüntü işleme teknolojilerini kullanarak hedef tespiti yapar ve görüntü aktarımı sağlar.</p>
     </div>
+
   </section>
+  <div id="popupImageContainer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+  <img id="popupImage" src="asoç.jpg" alt="KOVAK" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -288,5 +297,28 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.gallery img');
+    images.forEach((img, index) => {
+      img.style.animationDelay = `${index * 0.2}s`;
+      img.style.opacity = 1;
+    });
+
+    // Klavyeden 'e' tuşuna basınca görseli aç
+    document.addEventListener('keydown', (event) => {
+      if (event.key.toLowerCase() === 'e') {
+        const popup = document.getElementById('popupImageContainer');
+        popup.style.display = 'flex';
+      }
+    });
+
+    // Görsel alanına tıklanınca kapansın
+    document.getElementById('popupImageContainer').addEventListener('click', () => {
+      document.getElementById('popupImageContainer').style.display = 'none';
+    });
+  });
+</script>
+
 </body>
 </html>
